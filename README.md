@@ -54,29 +54,43 @@ https://theycotes.com/Stackit/project%202/index.php
 ├── README.md                        # This documentation file
 
 
-🧑‍💻 Tech Stack
-Language: PHP (Core PHP)
-Database: MySQL
-Frontend: HTML, CSS, JavaScript
-Rich Text Editor: TinyMCE or CKEditor (for Q/A)
-Authentication: PHP Sessions
-Notifications: AJAX Polling-based system
+## 🧑‍💻 Tech Stack
 
-✨ Key Features
-📝 Ask Questions with title, description (rich text), and tags
-🧾 Answer Questions using a rich text editor
-👍 Upvote/Downvote answers
-✅ Accept the best answer
-🏷️ Multi-tag support for questions
+This project uses a simple but effective stack of core web technologies:
 
-🔔 Notification System:
-When someone answers your question
-When someone comments on your answer
-When someone mentions you using @username
+- **Language**: PHP (Core PHP)
+- **Database**: MySQL
+- **Frontend**: HTML, CSS, JavaScript
+- **Rich Text Editor**: TinyMCE or CKEditor (for Q/A formatting)
+- **Authentication**: PHP Sessions
+- **Notifications**: AJAX-based polling system
 
-🔐 Authentication Flow
-register.php – User signup
-login.php – Starts session and sets user ID
-logout.php – Destroys session and redirects
-includes/auth.php – Auth middleware to restrict pages
-Admins access moderation via admin.php, admin2.php
+---
+
+## ✨ Key Features
+
+- 📝 **Ask Questions** – Title, rich-text description, and multiple tags
+- 🧾 **Answer Questions** – Users can post rich-formatted answers
+- 👍 **Voting** – Upvote or downvote helpful/unhelpful answers
+- ✅ **Accept Answers** – Mark the best answer for your question
+- 🏷️ **Tagging System** – Assign multiple tags to categorize questions
+
+### 🔔 Notification System
+Users receive real-time updates when:
+- Someone answers their question
+- Someone comments on their answer
+- Someone mentions them using `@username`
+
+---
+
+## 🔐 Authentication Flow
+
+Authentication is handled using PHP sessions and protected access logic:
+
+- `register.php` – User signup form
+- `login.php` – Starts user session and stores ID
+- `logout.php` – Destroys session and logs user out
+- `includes/auth.php` – Middleware to protect pages from unauthorized access
+- `admin.php`, `admin2.php` – Admin-only access for moderation tasks
+
+---
