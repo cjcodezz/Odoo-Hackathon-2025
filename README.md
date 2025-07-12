@@ -1,4 +1,8 @@
 # Odoo-Hackathon-2025
+
+🌐 Live Demo
+https://theycotes.com/Stackit/project%202/index.php
+
 StackIt – A Minimal Q&A Forum Platform 
 📚 StackIt – A Minimal Q&A Forum Platform
 StackIt is a lightweight, user-friendly Question & Answer platform designed to foster collaborative learning and structured knowledge sharing. Inspired by platforms like StackOverflow, StackIt focuses on simplicity, usability, and core Q&A functionalities.
@@ -54,3 +58,5 @@ When someone answers your question
 When someone comments on your answer
 When someone mentions you using @username
 Unread notification counter + dropdown list for recent updates
+
+
