@@ -1,62 +1,82 @@
 # Odoo-Hackathon-2025
 
+# 📘 StackIt – Minimal Q&A Forum (PHP + MySQL)
+
+**StackIt** is a clean, minimalistic, and collaborative Q&A platform built with PHP and MySQL. It allows users to ask questions, provide rich answers, vote on contributions, and get notified of relevant activity — all in a lightweight UI.
+
+---
 🌐 Live Demo
 https://theycotes.com/Stackit/project%202/index.php
+---
 
-StackIt – A Minimal Q&A Forum Platform 
-📚 StackIt – A Minimal Q&A Forum Platform
-StackIt is a lightweight, user-friendly Question & Answer platform designed to foster collaborative learning and structured knowledge sharing. Inspired by platforms like StackOverflow, StackIt focuses on simplicity, usability, and core Q&A functionalities.
+## 📁 Folder & File Structure
 
-🚀 Overview
-StackIt enables users to ask and answer questions, vote, tag content, and receive real-time notifications — all within a minimal, distraction-free interface.
+```bash
+/StackIt
+│
+├── api/
+│   ├── accept_answer.php            # Marks an answer as accepted
+│   ├── get_question_from_answer.php # Fetch question from answer
+│   ├── notifications.php            # Notification handler (fetch/send)
+│   ├── vote.php                     # Upvote/downvote handler
+│
+├── assets/
+│   ├── css/
+│   │   └── style.css                # All page styling
+│   ├── js/
+│   │   └── main.js                  # Voting, notifications, AJAX
+│
+├── config/
+│   └── database.php                 # DB connection settings
+│
+├── includes/
+│   ├── auth.php                     # Session & auth checker
+│   └── functions.php                # Reusable utility functions
+│
+├── sqlquery/
+│   └── 20250712090052_rustic_snow.sql # Sample backup or seed query
+│
+├── uploads/
+│   └── [uploaded images]           # User-uploaded images (from rich text)
+│
+├── admin.php                        # Admin control panel
+├── admin2.php                       # Secondary admin functions
+├── ask.php                          # Page to ask a new question
+├── index.php                        # Homepage with all questions
+├── login.php                        # User login form
+├── logout.php                       # Logout and session destroy
+├── profile.php                      # User profile and activity
+├── question.php                     # View a single question and its answers
+├── register.php                     # User registration form
+├── upload_image.php                 # Handles image uploads via editor
+├── u564191134_stackk.sql            # MySQL dump of the full database
+├── project 2 (1).zip                # Optional: zipped version of project
+├── README.md                        # This documentation file
 
-👥 User Roles & Permissions
-Role	Permissions
-Guest	🔹 View all questions and answers
-User	🔹 Register, login
-      🔹 Ask/answer questions
-      🔹 Vote
-Admin	🔹 Moderate content (edit, delete, manage users/questions/answers)
 
-✨ Core Features
-1. Ask Questions
-Submit questions with:
-Title – Clear and concise
-Description – Supports rich formatting
-Tags – Choose multiple relevant tags (e.g., React, JWT)
+🧑‍💻 Tech Stack
+Language: PHP (Core PHP)
+Database: MySQL
+Frontend: HTML, CSS, JavaScript
+Rich Text Editor: TinyMCE or CKEditor (for Q/A)
+Authentication: PHP Sessions
+Notifications: AJAX Polling-based system
 
-2. Rich Text Editor
-Fully-featured editor with:
-Bold, Italic, Strikethrough
-Bullet & Numbered lists
+✨ Key Features
+📝 Ask Questions with title, description (rich text), and tags
+🧾 Answer Questions using a rich text editor
+👍 Upvote/Downvote answers
+✅ Accept the best answer
+🏷️ Multi-tag support for questions
 
-Emojis 😊
-Hyperlink and Image insertion
-Text alignment (Left, Center, Right)
-
-3. Answer Questions
-Any logged-in user can:
-
-Post answers
-Use the same rich text editor for formatting
-Participate in structured discussions
-
-4. Voting & Accepting Answers
-Community-driven system:
-Upvote/downvote answers
-Question owners can mark one answer as Accepted
-
-5. Tagging System
-Multi-tag support for categorization and easy filtering
-Tags like JavaScript, Node.js, Database, etc.
-
-6. 🔔 Notification System
-Real-time notification icon (bell) in the navbar
-
-Triggers:
+🔔 Notification System:
 When someone answers your question
 When someone comments on your answer
 When someone mentions you using @username
-Unread notification counter + dropdown list for recent updates
 
-
+🔐 Authentication Flow
+register.php – User signup
+login.php – Starts session and sets user ID
+logout.php – Destroys session and redirects
+includes/auth.php – Auth middleware to restrict pages
+Admins access moderation via admin.php, admin2.php
